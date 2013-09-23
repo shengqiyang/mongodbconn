@@ -24,7 +24,7 @@ public class DBConn {
 
 	public static final String DB_NAME = "dbpedia";
 	public static final String DB_NODE_COLL = "thing";
-	public static final String DB_EDGE_COLL = "relations";
+	public static final String DB_EDGE_COLL = "relation";
 
 	private DB db;
 
