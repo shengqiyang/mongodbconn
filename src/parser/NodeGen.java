@@ -43,6 +43,7 @@ public class NodeGen {
 				if (!map.containsKey(tokens[1]))
 					map.put(tokens[1], new HashSet<String>());
 				map.get(tokens[1]).add(tokens[2]);
+				
 				if (tokens[1].equals("comment")) {
 					Set<String> keywords = genKeywords(ascSet, stopSet,
 							tokens[2]);
