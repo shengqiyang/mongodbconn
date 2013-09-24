@@ -23,7 +23,7 @@ public class DBConn {
 	public static final int DB_PORT = 27017;
 
 	public static final String DB_NAME = "dbpedia";
-	public static final String DB_NODE_COLL = "thing";
+	public static final String DB_NODE_COLL = "nodes";
 	public static final String DB_EDGE_COLL = "relations";
 
 	private DB db;
