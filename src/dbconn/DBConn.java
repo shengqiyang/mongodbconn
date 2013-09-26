@@ -24,7 +24,7 @@ public class DBConn {
 
 	public static final String DB_NAME = "dbpedia";
 	public static final String DB_NODE_COLL = "nodes";
-	public static final String DB_EDGE_COLL = "relations";
+	public static final String DB_EDGE_COLL = "edges";
 
 	private DB db;
 
@@ -84,6 +84,7 @@ public class DBConn {
 				val = val.replace(",", "");
 				if (val.endsWith("\\"))
 					val = StringUtil.wordDenoise(val);
+				
 				if (val.length() == 0)
 					continue;
 				else if (StringUtil.isInteger(val)) {
@@ -91,7 +92,7 @@ public class DBConn {
 				} else if (StringUtil.isDouble(val)) {
 					list.add(Double.parseDouble(val));
 				} else
-					list.add(val);
+					list.add(val.replace("_", " "));
 			}
 			if (list.size() == 1)
 				doc.append(field, list.get(0));
