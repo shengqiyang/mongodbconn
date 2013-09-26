@@ -101,8 +101,12 @@ public class NodeGen {
 				continue;
 			pw.print(att);
 			Set<String> set = map.get(att);
-			for (String val : set)
-				pw.print(" " + val);
+			for (String val : set) {
+				if(att.equals("subject") && val.startsWith("category:"))
+					pw.print(" " + val.substring(9));
+				else 
+					pw.print(" " + val);
+			}
 			pw.println();
 		}
 		pw.println();
